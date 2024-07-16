@@ -1,0 +1,143 @@
+Build CLI Apps with Charm
+
+DevOps Chapter
+
+* Agenda
+- TODOs
+
+* Materieals
+.link https://github.com/Think-iT-Labs/charm-slides This slides
+.link https://github.com/Think-iT-Labs/charm-workshop-examples Some repository with multiple examples
+
+* What is Charm?
+- Charm is a suite of tools for building command-line applications in Go.
+- They are designed to be cool, fun, and colorful.
+- Their Slogan: _We_make_the_command_line_glamorous._
+
+- They are used by a lot of tools:
+.link https://github.com/awslabs/eks-node-viewer Some eks tool by AWS Labs
+.link https://github.com/dhth/kplay Some Kafka CLI
+.link https://github.com/charmbracelet/bubbletea?tab=readme-ov-file#bubble-tea-in-the-wild Here's a list
+
+* Their SSH server
+
+Here's their SSH home page (what?)
+`ssh`  `git.charm.sh`
+
+* Why would you use Charm?
+- It has a framework, so you can extend it.
+- It has a lot of tools that you can use, which are already built.
+- The ready tools are built in the same framework, so you can plug them in easily.
+- It's always prettier that you'll ever make it.
+- It's fun to use.
+
+* Bubble Tea: The Framework
+.link https://github.com/charmbracelet/bubbletea Bubble Tea Repository
+- Bubble Tea is a Go framework for building terminal applications.
+- README: The fun, functional and stateful way to build terminal apps. A Go framework based on The Elm Architecture. Bubble Tea is well-suited for simple and complex terminal applications, either inline, full-window, or a mix of both.
+.image https://stuff.charm.sh/bubbletea/bubbletea-4k.png 350 212
+
+
+* Bubble Tea: How?
+- You implement an interface, you plug it in, and it's on the terminal.
+.code 1.go
+
+
+* Bubble Tea: The Interface
+.code 2.go
+
+_Concepts_:
+- *Model*: A thing, in the terminal, with a state.
+- *Program*: It runs the model.
+- *Message*: It's a message that you send to the model, it can be a key press, or anything.
+- *Command*: It's a task that you can run, like exit, or save, or whatever.
+
+* Demo: A Grid
+- Just a grid, and you move around it.
+- Run: `make` `grid`
+
+* Styling: Lipgloss
+.link https://github.com/charmbracelet/lipgloss Lipgloss Repository
+- Our "whatever we built", is still ugly
+- Lipgloss is a library for styling terminal output.
+- You define a style, you use the `Render` function, inside the `View()` implementation, and that's it.
+.image https://stuff.charm.sh/lipgloss/lipgloss-mascot-2k.png 350 350
+
+* Styling: Code
+.code 4.go
+
+_What_funcs_can_I_use?_:
+- *Border*, *Padding*, *Margin*, *Colors*, *Alignment*, ...
+
+* Demo: A Grid, but pretty
+- The same grid, but prettier.
+- Run: `make` `pretty-grid`
+
+* Markdown: Glamour
+.link https://github.com/charmbracelet/glamour Glamour Repository
+- We can render markdown, in the terminal, simply..
+- The tool is called Glamour.
+.image https://camo.githubusercontent.com/75716c29938ce34de880f7f94686bd105bf8bba2e8068abe8c0d24820b5a505a/68747470733a2f2f73747566662e636861726d2e73682f676c616d6f75722f676c616d6f75722d6769746875622d6865616465722e706e67
+
+* Markdown: Code
+- You just use the `Render` function, and that's it.
+.code 5.go
+
+* Demo: Grid, prettier, with an intro
+- The same grid, but with an intro as markdown.
+- Run: `make` `intro-grid`
+
+* Bubbles: More like a Component Library
+.link https://github.com/charmbracelet/bubbles Bubbles Repository
+- Bubbles are components, that you can use, to build your application.
+- They are built on top of Bubble Tea, so you can extend and plug stuff in.
+- They are built on top of Lipgloss, so you can extend the styles.
+- There's lists, tables, inputs, textareas, progress bars, ...
+.image https://camo.githubusercontent.com/60e274a5b7d2682d63b720ffd2042bd8a9b2926c0cc1fe4331c167a1aabf070e/68747470733a2f2f73747566662e636861726d2e73682f627562626c65732f627562626c65732d6769746875622e706e67 261 348
+
+* Demo: Vim for Markdown, with a preview
+- A vim-like editor, with a markdown preview.
+- Run: `make` `vimd`
+
+* Now seriously, It's all about prompts, it's like a form
+.link https://github.com/charmbracelet/huh Huh Repository
+- Huh is a library for building interactive prompts.
+- It's built on top of Bubbles, so you can extend and plug stuff in.... (you know the drill)
+- You can build multi-step prompts, with validation, and all that stuff.
+- Everything is extensible (styles, keybindings, ...)
+.image https://camo.githubusercontent.com/8367e2d323cd95bab3e24bcd6a96fb47c3aef73adcdcf27af92a24432acc3370/68747470733a2f2f73747566662e636861726d2e73682f6875682f676c656e6e2e706e67 242 361
+
+* Demo: A CLI, for Conventional Commits
+- Too tired to write a demo.. so I used a tool that I built for myself.
+- Just I use Zed, by the way.
+.link https://github.com/Nie-Mand/cccli Repository
+
+* Tools: Revisited
+- *Bubble Tea*: The framework
+- *Lipgloss*: The styling library
+- *Glamour*: The markdown renderer
+- *Bubbles*: The component library
+- *Huh*: The prompt library
+
+* Tools: More
+.link https://github.com/charmbracelet/wish Wish: How about some SSH Stuff?
+.link https://github.com/charmbracelet/log Log: Logging, but pretty
+.link https://github.com/charmbracelet/gum Gum: Shell scripting, no idea how
+.link https://github.com/charmbracelet/mods Mods: Just an AI on the terminal
+.link https://github.com/charmbracelet/skate Skate: some KV store, I guess
+.link https://github.com/charmbracelet/pop Pop: Send emails, but in the terminal
+
+* Tools: Ones from the Ecosystem
+.link https://github.com/muesli/reflow Reflow: ANSI-aware wrapping
+.link  https://github.com/muesli/termenv Termenv: Terminal environment customization
+.link  https://github.com/lrstanley/bubblezone BubbleZone: Use the mouse in the terminal
+.link  https://github.com/NimbleMarkets/ntcharts ntcharts: Charts in the terminal
+
+* Full Stack Terminal Development
+- You can basically architect a full terminal application with bubble tea.
+- Style it with Lipgloss.
+- Use reusable components from Bubbles.
+- You have models management now: Root model, that has sub-models, and when you update you need to know what to update... (State management level complexity)
+- Forms are always annoying, so in Terminal, that's why they have a library for that.
+
+* QA
