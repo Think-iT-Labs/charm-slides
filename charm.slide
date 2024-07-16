@@ -145,4 +145,9 @@ _What_funcs_can_I_use?_:
 - You have models management now: Root model, that has sub-models, and when you update you need to know what to update... (State management level complexity)
 - Forms are always annoying, so in Terminal, that's why they have a library for that.
 
+* Resources
+.link https://charm.sh Their website
+.link https://www.youtube.com/@charmcli Their YouTube Channel
+.link https://github.com/charmbracelet Their GitHub Organization
+
 * QA
