@@ -1,12 +1,17 @@
 Build CLI Apps with Charm
 
-DevOps Chapter
+Mohamed Sofiene Barka
 
 * Agenda
-- TODOs
+- What is Charm
+- Why would you use Charm
+- Go through each tool, with demos and stuff
+- Mention some other tools, but we don't go through them
+- Perspectives
+- QA
 
-* Materieals
-.link https://github.com/Think-iT-Labs/charm-slides This slides
+* Materials
+.link https://github.com/Think-iT-Labs/charm-slides This slides (`presentx`)
 .link https://github.com/Think-iT-Labs/charm-workshop-examples Some repository with multiple examples
 
 * What is Charm?
@@ -22,7 +27,7 @@ DevOps Chapter
 * Their SSH server
 
 Here's their SSH home page (what?)
-`ssh`  `git.charm.sh`
+`ssh`git.charm.sh`
 
 * Why would you use Charm?
 - It has a framework, so you can extend it.
@@ -54,7 +59,7 @@ _Concepts_:
 
 * Demo: A Grid
 - Just a grid, and you move around it.
-- Run: `make` `grid`
+- Run: `make`grid`
 
 * Styling: Lipgloss
 .link https://github.com/charmbracelet/lipgloss Lipgloss Repository
@@ -71,7 +76,7 @@ _What_funcs_can_I_use?_:
 
 * Demo: A Grid, but pretty
 - The same grid, but prettier.
-- Run: `make` `pretty-grid`
+- Run: `make`pretty-grid`
 
 * Markdown: Glamour
 .link https://github.com/charmbracelet/glamour Glamour Repository
@@ -85,7 +90,7 @@ _What_funcs_can_I_use?_:
 
 * Demo: Grid, prettier, with an intro
 - The same grid, but with an intro as markdown.
-- Run: `make` `intro-grid`
+- Run: `make`intro-grid`
 
 * Bubbles: More like a Component Library
 .link https://github.com/charmbracelet/bubbles Bubbles Repository
@@ -97,7 +102,7 @@ _What_funcs_can_I_use?_:
 
 * Demo: Vim for Markdown, with a preview
 - A vim-like editor, with a markdown preview.
-- Run: `make` `vimd`
+- Run: `make`vimd`
 
 * Now seriously, It's all about prompts, it's like a form
 .link https://github.com/charmbracelet/huh Huh Repository
@@ -113,7 +118,7 @@ _What_funcs_can_I_use?_:
 .link https://github.com/Nie-Mand/cccli Repository
 
 * Tools: Revisited
-- *Bubble Tea*: The framework
+- *Bubble*Tea*: The framework
 - *Lipgloss*: The styling library
 - *Glamour*: The markdown renderer
 - *Bubbles*: The component library
